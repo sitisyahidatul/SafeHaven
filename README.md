@@ -18,12 +18,12 @@ flutter run                                  # or: flutter run -d chrome
 | Role | Email | Can do |
 |---|---|---|
 | User | `user@shelter.com` | Find and view shelters |
-| Admin | `admin@shelter.com` | Add shelters, and edit only the shelters they added (the 6 sample shelters belong to this account) |
+| Volunteer | `volunteer@shelter.com` | Add shelters, and edit only the shelters they added (the 6 sample shelters belong to this account) |
 
 An unknown email logs in as a **User**.
 
-To register as a **Admin**, choose "Admin" on the Register screen and enter a valid
-**Admin ID code**. Sample codes: `SH-ADM-2026` or `SH-ADM-2027`.
+To register as a **Volunteer**, choose "Volunteer" on the Register screen and enter a valid
+**Volunteer ID code**. Sample codes: `SH-ADM-2026` or `SH-ADM-2027`.
 (Practical 1: codes are written in the app. Practical 2: they move into the database.)
 
 ## Location permissions (required, otherwise GPS will always fail)
@@ -54,14 +54,14 @@ To register as a **Admin**, choose "Admin" on the Register screen and enter a va
 If permission is denied or GPS is off, the app falls back to central Kuala Lumpur.
 
 ## Screens
-1. Onboarding (3 pages)  2. Login  3. Register (User / Admin + admin ID code)
+1. Onboarding (3 pages)  2. Login  3. Register (User / Volunteer + volunteer ID code)
 4. Dashboard (BottomNavigationBar: Home, Shelters, Profile)  5. Shelter list (main feature)
 6. Shelter details (Get directions opens Google Maps)  7. Add / Edit shelter form (Admin only)
 
 **Profile tab:** Edit profile and Change password (show a "coming in a later practical" message),
-Emergency numbers (User) or Shelters added (Admin), About SafeHaven (includes SDG 11), Log out.
+Emergency numbers (User) or Shelters added (Volunteer), About SafeHaven (includes SDG 11), Log out.
 
-**Admin extras:** Add shelter button, "My shelters" filter, quick edit icon on their own shelters.
+**Volunteer extras:** Add shelter button, "My shelters" filter, quick edit icon on their own shelters.
 
 ## Folder layout
 ```
