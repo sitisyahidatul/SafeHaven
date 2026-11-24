@@ -123,9 +123,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             icon: Icon(Icons.person_outline),
                             label: Text('User')),
                         ButtonSegment(
-                            value: UserRole.admin,
-                            icon: Icon(Icons.admin_panel_settings_outlined),
-                            label: Text('Admin')),
+                            value: UserRole.volunteer,
+                            icon: Icon(Icons.volunteer_panel_settings_outlined),
+                            label: Text('Volunteer')),
                       ],
                       selected: {_role},
                       onSelectionChanged: (s) =>
@@ -133,25 +133,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      _role == UserRole.admin
-                          ? 'Admins can add and edit shelters. You need an admin ID code from your organisation.'
+                      _role == UserRole.volunteer
+                          ? 'Volunteers can add and edit shelters. You need an volunteer ID code from your organisation.'
                           : 'Users can find and view shelters.',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
-                    // Only admins must enter an organisation / admin ID code.
-                    if (_role == UserRole.admin) ...[
+                    // Only volunteers must enter an organisation / volunteer ID code.
+                    if (_role == UserRole.volunteer) ...[
                       const SizedBox(height: 16),
                       TextFormField(
                         controller: _code,
                         textCapitalization: TextCapitalization.characters,
                         decoration: const InputDecoration(
-                          labelText: 'Admin ID code',
+                          labelText: 'Volunteer ID code',
                           helperText: 'Given to you by your organisation',
                           prefixIcon: Icon(Icons.badge_outlined),
                         ),
                         validator: (v) => Session.isValidAdminCode(v ?? '')
                             ? null
-                            : 'Invalid admin ID code',
+                            : 'Invalid volunteer ID code',
                       ),
                     ],
                     const SizedBox(height: 24),
