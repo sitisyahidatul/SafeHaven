@@ -45,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       'assets/images/onboarding_3.png',
       'Stay ',
       'Informed',
-      'Trusted admins keep shelter information up to date, so you can '
+      'Trusted volunteers keep shelter information up to date, so you can '
           'check everything in one place before you go.',
     ),
   ];
