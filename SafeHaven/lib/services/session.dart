@@ -1,4 +1,4 @@
-enum UserRole { user, admin }
+enum UserRole { user, volunteer }
 
 class AppUser {
   final String name;
@@ -7,45 +7,45 @@ class AppUser {
   final String phone;
   const AppUser(this.name, this.email, this.role, {this.phone = ''});
 
-  String get roleLabel => role == UserRole.admin ? 'Admin' : 'User';
+  String get roleLabel => role == UserRole.volunteer ? 'Volunteer' : 'User';
 
   AppUser copyWith({String? name, String? phone}) =>
       AppUser(name ?? this.name, email, role, phone: phone ?? this.phone);
 }
 
 /// Who is logged in, and what they may do.
-/// PROTOTYPE ONLY: users and admin codes live in memory / in code.
-/// In Practical 2 both move into database tables (`users` and `admin_codes`),
+/// PROTOTYPE ONLY: users and volunteer codes live in memory / in code.
+/// In Practical 2 both move into database tables (`users` and `volunteer_codes`),
 /// and Edit profile / Change password will save to the `users` table.
 class Session {
-  /// Sample organisation / admin ID codes. A person can only register as a
-  /// Admin if they type one of these. (Practical 2: stored in a database.)
-  static const List<String> validAdminCodes = [
+  /// Sample organisation / volunteer ID codes. A person can only register as a
+  /// Volunteer if they type one of these. (Practical 2: stored in a database.)
+  static const List<String> validVolunteerCodes = [
     'SH-ADM-2026',
     'SH-ADM-2027',
   ];
 
-  static bool isValidAdminCode(String code) =>
-      validAdminCodes.contains(code.trim().toUpperCase());
+  static bool isValidVolunteerCode(String code) =>
+      validVolunteerCodes.contains(code.trim().toUpperCase());
 
   /// Demo accounts (any password with 6+ characters):
   ///   user,      user@shelter.com       -> can only view shelters
-  ///   admin, admin@shelter.com  -> can also add and edit shelters
+  ///   volunteer, volunteer@shelter.com  -> can also add and edit shelters
   static final Map<String, AppUser> _users = {
     'user@shelter.com': const AppUser(
         'Demo User', 'user@shelter.com', UserRole.user,
         phone: '012-3456789'),
-    'admin@shelter.com': const AppUser(
-        'Demo Admin', 'admin@shelter.com', UserRole.admin,
+    'volunteer@shelter.com': const AppUser(
+        'Demo Volunteer', 'volunteer@shelter.com', UserRole.volunteer,
         phone: '013-9876543'),
   };
 
   static AppUser? current;
 
-  /// Only admins may add or edit shelters.
-  static bool get canEdit => current?.role == UserRole.admin;
+  /// Only volunteers may add or edit shelters.
+  static bool get canEdit => current?.role == UserRole.volunteer;
 
-  /// An admin may edit only the shelters they added themselves.
+  /// An volunteer may edit only the shelters they added themselves.
   /// (Practical 2: compare with the `created_by` column in the database.)
   static bool canEditShelter(String createdBy) =>
       canEdit && current?.email == createdBy.trim().toLowerCase();
@@ -57,7 +57,7 @@ class Session {
   }
 
   /// No password check yet (no database). An unknown email logs in as a User,
-  /// the safest role, so nobody gains edit rights without a valid admin code.
+  /// the safest role, so nobody gains edit rights without a valid volunteer code.
   static void login(String email) {
     final key = email.trim().toLowerCase();
     current = _users[key] ?? AppUser(key.split('@').first, key, UserRole.user);
