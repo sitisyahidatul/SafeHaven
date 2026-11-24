@@ -61,7 +61,7 @@ class ShelterCard extends StatelessWidget {
   final double distanceKm;
   final VoidCallback onTap;
 
-  /// Set only for an admin's own shelter: shows a quick Edit button.
+  /// Set only for a volunteer's own shelter: shows a quick Edit button.
   final VoidCallback? onEdit;
 
   const ShelterCard({
