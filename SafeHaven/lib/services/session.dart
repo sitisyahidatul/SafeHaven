@@ -45,7 +45,7 @@ class Session {
   /// Only volunteers may add or edit shelters.
   static bool get canEdit => current?.role == UserRole.volunteer;
 
-  /// An volunteer may edit only the shelters they added themselves.
+  /// A volunteer may edit only the shelters they added themselves.
   /// (Practical 2: compare with the `created_by` column in the database.)
   static bool canEditShelter(String createdBy) =>
       canEdit && current?.email == createdBy.trim().toLowerCase();
