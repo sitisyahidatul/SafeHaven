@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void _submit() {
     if (_formKey.currentState!.validate()) {
       // No database yet (Practical 2): any valid input is accepted,
-      // but the role (User / Admin) comes from registration.
+      // but the role (User / Volunteer) comes from registration.
       Session.login(_email.text);
       Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
     }
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               textAlign: TextAlign.center,
                               style: text.headlineMedium),
                           const SizedBox(height: 6),
-                          Text('Log in to find shelter near you',
+                          Text('Find Safety.Stay Informed',
                               textAlign: TextAlign.center,
                               style: text.bodySmall),
                           const SizedBox(height: 24),
