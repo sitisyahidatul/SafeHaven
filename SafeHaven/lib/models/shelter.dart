@@ -10,7 +10,7 @@ class Shelter {
   String phone;
   bool isOpen;
   List<String> facilities;
-  String createdBy; // email of the Admin who added it
+  String createdBy; // email of the Volunteer who added it
 
   Shelter({
     required this.id,
@@ -53,7 +53,7 @@ const List<String> kFacilities = [
 /// Names and coordinates are illustrative only.
 List<Shelter> sampleShelters() => [
       Shelter(
-        createdBy: 'admin@shelter.com',
+        createdBy: 'volunteer@shelter.com',
         id: 's1',
         name: 'SK Taman Melati Hall',
         address: 'Jalan Melati 2, Taman Melati, Kuala Lumpur',
@@ -67,7 +67,7 @@ List<Shelter> sampleShelters() => [
         facilities: ['Water', 'Food', 'Toilets', 'Power'],
       ),
       Shelter(
-        createdBy: 'admin@shelter.com',
+        createdBy: 'volunteer@shelter.com',
         id: 's2',
         name: 'Dewan Komuniti Setapak',
         address: 'Jalan Genting Klang, Setapak, Kuala Lumpur',
@@ -81,7 +81,7 @@ List<Shelter> sampleShelters() => [
         facilities: ['Water', 'Toilets', 'Medical'],
       ),
       Shelter(
-        createdBy: 'admin@shelter.com',
+        createdBy: 'volunteer@shelter.com',
         id: 's3',
         name: 'Surau Al-Hidayah',
         address: 'Lorong Sentul 5, Sentul, Kuala Lumpur',
@@ -95,7 +95,7 @@ List<Shelter> sampleShelters() => [
         facilities: ['Water', 'Toilets'],
       ),
       Shelter(
-        createdBy: 'admin@shelter.com',
+        createdBy: 'volunteer@shelter.com',
         id: 's4',
         name: 'Stadium Titiwangsa Relief Centre',
         address: 'Jalan Temerloh, Titiwangsa, Kuala Lumpur',
@@ -116,7 +116,7 @@ List<Shelter> sampleShelters() => [
         ],
       ),
       Shelter(
-        createdBy: 'admin@shelter.com',
+        createdBy: 'volunteer@shelter.com',
         id: 's5',
         name: 'SMK Bukit Bintang Hall',
         address: 'Jalan Pudu, Bukit Bintang, Kuala Lumpur',
@@ -130,7 +130,7 @@ List<Shelter> sampleShelters() => [
         facilities: ['Water', 'Toilets', 'Power'],
       ),
       Shelter(
-        createdBy: 'admin@shelter.com',
+        createdBy: 'volunteer@shelter.com',
         id: 's6',
         name: 'Dewan Serbaguna Cheras',
         address: 'Jalan Cheras, Cheras, Kuala Lumpur',
