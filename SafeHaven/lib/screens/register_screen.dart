@@ -134,7 +134,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     const SizedBox(height: 8),
                     Text(
                       _role == UserRole.volunteer
-                          ? 'Volunteers can add and edit shelters. You need an volunteer ID code from your organisation.'
+                          ? 'Volunteers can add and edit shelters. You need a volunteer ID code from your organisation.'
                           : 'Users can find and view shelters.',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
