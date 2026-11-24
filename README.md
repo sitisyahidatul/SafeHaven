@@ -69,7 +69,7 @@ lib/main.dart                      app + routes
 lib/theme/app_theme.dart           the ONE ThemeData (navy + red) + card decoration
 lib/models/shelter.dart            model + sample data
 lib/services/shelter_store.dart    location logic + in-memory shelter data
-lib/services/session.dart          logged-in user, roles, admin ID codes, edit rule
+lib/services/session.dart          logged-in user, roles, volunteer ID codes, edit rule
 lib/widgets/                       shelter card + type icons, logo, bottom wave
 lib/screens/*.dart                 the screens
 assets/images/                     logo and onboarding illustrations
