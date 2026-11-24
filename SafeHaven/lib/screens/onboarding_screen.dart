@@ -97,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
 
-            // ---- Main button: Next (navy) / Get Started (blue) ----
+            // ---- Main button: Next (navy) / Get Started (red) ----
             Padding(
               padding: const EdgeInsets.fromLTRB(28, 12, 28, 0),
               child: SizedBox(
