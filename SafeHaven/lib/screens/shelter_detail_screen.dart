@@ -45,7 +45,7 @@ class ShelterDetailScreen extends StatelessWidget {
               onPressed: () => Navigator.pop(context),
             ),
             actions: [
-              // An admin may edit only the shelters they added.
+              // A Volunteer may edit only the shelters they added.
               if (Session.canEditShelter(shelter.createdBy))
                 IconButton(
                   tooltip: 'Edit',
