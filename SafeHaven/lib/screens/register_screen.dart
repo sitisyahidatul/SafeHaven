@@ -149,7 +149,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           helperText: 'Given to you by your organisation',
                           prefixIcon: Icon(Icons.badge_outlined),
                         ),
-                        validator: (v) => Session.isValidAdminCode(v ?? '')
+                        validator: (v) => Session.isValidVolunteerCode(v ?? '')
                             ? null
                             : 'Invalid volunteer ID code',
                       ),
