@@ -146,7 +146,7 @@ class _HomeTab extends StatelessWidget {
             const SizedBox(height: 24),
 
             if (Session.canEdit) ...[
-              // Admin: show the shelters they added, with a quick Edit icon.
+              // Volunteer: show the shelters they added, with a quick Edit icon.
               Text('My shelters (${mine.length})', style: text.titleLarge),
               const SizedBox(height: 10),
               if (mine.isEmpty)
@@ -195,7 +195,7 @@ class _HomeTab extends StatelessWidget {
                     label: const Text('All shelters'),
                   ),
                 ),
-                // Only admins may add shelters.
+                // Only volunteers may add shelters.
                 if (Session.canEdit) ...[
                   const SizedBox(width: 12),
                   Expanded(
