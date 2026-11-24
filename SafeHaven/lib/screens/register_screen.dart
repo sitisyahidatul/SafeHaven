@@ -124,7 +124,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             label: Text('User')),
                         ButtonSegment(
                             value: UserRole.volunteer,
-                            icon: Icon(Icons.volunteer_panel_settings_outlined),
+                            icon: Icon(Icons.volunteer_activism_outlined),
                             label: Text('Volunteer')),
                       ],
                       selected: {_role},
