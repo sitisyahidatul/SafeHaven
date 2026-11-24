@@ -41,7 +41,7 @@ class _ShelterListScreenState extends State<ShelterListScreen> {
 
         return Scaffold(
           backgroundColor: Colors.transparent,
-          // Only admins may add shelters.
+          // Only volunteers may add shelters.
           floatingActionButton: Session.canEdit
               ? FloatingActionButton.extended(
                   backgroundColor: AppTheme.primary,
